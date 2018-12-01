@@ -37,8 +37,9 @@ class StudentController extends Controller
     public function detail(Request $request,$id)
     {
         $student = Student::find($id);
+        $rooms = Room::all();
 
-        return view('admin.student.detail',compact('student'));
+        return view('admin.student.detail',compact('student','rooms'));
     }
 
     public function on($id)
@@ -119,6 +120,15 @@ class StudentController extends Controller
         $student->save();
 
         return redirect('admin/student/editimage/'.$id)->with('thongbao','Chỉnh sửa sinh viên thành công hãy kiểm tra lại');
+    }
+
+    public function editroom(Request $request,$id)
+    {
+        $student = Student::find($id);
+        $student->room_id = $request->room_id;
+        $student->save();
+
+        return redirect('admin/student/detail/'.$id)->with('thongbao','Chuyển phòng thành công');
     }
 
     /**

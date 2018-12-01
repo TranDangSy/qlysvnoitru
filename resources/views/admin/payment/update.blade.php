@@ -38,18 +38,22 @@
 								<input type="text" class="form-control" name="method" value="{{$payment->method}}">
 							</div>
 						</div>
+						@if($payment->student->name != null)
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Sinh viên</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="student_id" value="{{$payment->student->name}}">
 							</div>
 						</div>
+						@endif
+						@if($payment->room->name != null)
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Phòng</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" name="room_id" value="{{$payment->room->name}}">
 							</div>
 						</div>
+						@endif
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Loại hóa đơn</label>
 							<div class="col-sm-8">

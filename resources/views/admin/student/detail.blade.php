@@ -32,7 +32,7 @@
 										<tr>
 											<td class="icon"><span class="mdi mdi-smartphone-android"></span></td>
 											<td class="item">Trạng thái<span class="icon s7-phone"></span></td>
-											@if($student->room->status == 1)
+											@if($student->status == 1)
 											<td><a href="admin/room/detail/{{$student->room->id}}">Đang ở phòng {{$student->room->name}}</a></td>
 											@else
 											<td>Không ở phòng nào</td>
@@ -47,12 +47,47 @@
 											<td>Nữ</td>
 											@endif
 										</tr>
+										<tr>
+											<td class="icon"><span class="mdi mdi-pin"></span></td>
+											<td class="item">Thao tác<span class="icon s7-global"></span></td>
+											<td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Chuyển phòng</button></td>
+										</tr>
 									</tbody>
 								</table>
+								<form action="admin/student/editroom/{{$student->id}}" method="POST" role="form" class="form-vertical">
+									@csrf
+									<div class="modal fade" id="myModal" role="dialog">
+										<div class="modal-dialog modal-sm">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">Chọn phòng</h4>
+												</div>
+												<div class="modal-body">
+													<div class="form-group text-center">
+														<div class="col-md-4 col-sm-6 col-xs-12">
+															<label for="room_id">Phòng</label>
+															<select class="form-group" name="room_id">
+																@foreach($rooms as $room)
+																<option value="{{$room->id}}">{{$room->name}}</option>
+																@endforeach
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button style="margin-top: 20px;" class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Bạn có muốn chuyển phòng')">Chuyển phòng</button>
+													<button style="margin-top: 20px;" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+												</div>
+											</div>
+										</div>		
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	@endsection
+		@endsection

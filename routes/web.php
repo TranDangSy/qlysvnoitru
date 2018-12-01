@@ -71,6 +71,8 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::get('editimage/{id}','StudentController@getedit');
 		Route::post('posteditimage/{id}','StudentController@postedit');
+
+		Route::post('editroom/{id}','StudentController@editroom');
 	});
 
 	Route::group(['prefix'=>'room'], function () 

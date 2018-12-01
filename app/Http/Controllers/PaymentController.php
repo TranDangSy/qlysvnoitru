@@ -59,6 +59,6 @@ class PaymentController extends Controller
     {
         $payment->delete();
 
-        return redirect()->route('payment.index');
+        return redirect('admin/payment');
     }
 }

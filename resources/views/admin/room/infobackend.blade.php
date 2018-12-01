@@ -15,9 +15,9 @@
 				<label for="status" class="form-control">
 					Trạng thái phòng: 
 					@if($room->status == 1)
-					{{'Phòng đủ người'}}
+					{{'Phòng đang sử dụng'}}
 					@else
-					{{'Phòng còn thiếu'}}
+					{{'Phòng đang sửa'}}
 					@endif
 				</label>
 				@if($room->status == 1)
