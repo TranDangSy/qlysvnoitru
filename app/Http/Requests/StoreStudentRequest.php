@@ -26,7 +26,7 @@ class StoreStudentRequest extends FormRequest
         return [
             'name' => 'required',
             'age' => 'required',
-            'gender' => 'required',
+            'gender' => 'required|integer',
             'status' => 'required',
             'file' => 'required|image',
             'note' => 'required',
@@ -41,6 +41,7 @@ class StoreStudentRequest extends FormRequest
         return [
             'name.required' => 'Bạn chưa nhập tên sinh viên',
             'age.required' => 'Chưa nhập tuổi',
+            'age.integer' => 'Tuổi phải là số',
             'gender.required' => 'Chưa nhập giới tính',
             'status.required' => 'Chưa nhập trạng thái',
             'note.required' => 'Chưa nhập giới tính',

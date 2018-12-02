@@ -29,7 +29,7 @@ class StoreUserRequest extends FormRequest
             'password' => 'required|min:3|max:32',
             'file' => 'required|image',
             'gender' => 'required',
-            'status' => 'required|integer',
+            'status' => 'required',
         ];
     }
 

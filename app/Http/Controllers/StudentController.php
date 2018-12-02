@@ -89,10 +89,12 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         $this->validate($request,[
-            'name' => 'min:2|max:32'
+            'name' => 'min:2|max:32',
+            'age' => 'integer',
         ],[
             'name.min' => 'Tên sinh viên phải lớn hơn 2 kí tự',
-            'name.max' => 'Tên sinh viên không quá 32 kí tự'
+            'name.max' => 'Tên sinh viên không quá 32 kí tự',
+            'age.integer' => 'Tuổi phải là số',
         ]);
 
         $student->name = $request->name;
