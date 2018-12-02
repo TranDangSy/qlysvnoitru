@@ -46,6 +46,11 @@
                                             <td>Không hoạt động</td>
                                             @endif
                                         </tr>
+                                        <tr>
+                                            <td class="icon"><span class="mdi mdi-pin"></span></td>
+                                            <td class="item">Ngày tạo<span class="icon s7-global"></span></td>
+                                            <td>{{$user->created_at}}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -111,7 +116,7 @@
                                 </div>
                             </form>
                             <button style="display: block; margin: auto;" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">Đổi mật khẩu</button>
-                            <a href="admin/user" class="btn btn-success">Quay lại</a>
+                            <a href="admin/user" class="btn btn-success btn-lg">Quay lại</a>
                         </div>
                     </div>
                 </div>

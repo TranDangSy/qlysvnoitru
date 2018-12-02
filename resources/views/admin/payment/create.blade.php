@@ -34,37 +34,72 @@
                         <h3 style="color: #000000;" for="date">Ngày bắt đầu ở ( Nếu có) :</h3>
                         <input class="form-control" type="text" id="date" value="">
                     </div>
+                </div>
+                <div class="col col-md-4">
+                    <h3 for="student_id">Phòng:</h3>
+                    <select class="form-control" name="room_id" style="margin-bottom: 10px;">
+                        <option value="">---</option>
+                        @foreach($rooms as $room)
+                        <option value="{{$room->id}}">{{$room->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col col-md-4">
+                    <h3 style="color: #000000;" for="type">Chọn loại thanh toán:</h3>
+                    <select class="form-control" name="type_payment">
+                        <option value="tiền phòng">Tiền phòng</option>
+                        <option value="tiền điện">Tiền điện</option>
+                        <option value="tiền nước">Tiền nước</option>
+                    </select>
+                </div>
+                <div class="col col-md-4">
+                    <h3 style="color: #000000;">Chọn sinh viên</h3>
+                    <label for="student">Tên sinh viên:</label>
+                    <input type="text" readonly="true" class="form-control-sm selected-student-name" data-toggle="modal" data-target="#myModal">
+                    <br/>
+                    <label for="student">Mã sinh viên:</label>
+                    <input type="text" readonly="true" class="form-control-sm selected-student-id" name="student_id">
+                </div>
+            </div>
+            <button style="display: block; margin: auto;" type="submit" class="btn btn-primary btn-lg">Tạo hóa đơn</button>
+        </form>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="col col-md-4">
-                        <h3 for="student_id">Sinh viên:</h3>
-                        <select class="form-control" name="student_id">
-                            <option value="">---</option>
-                            @foreach($students as $student)
-                            <option value="{{$student->id}}">{{$student->name}}</option>
-                            @endforeach
-                        </select>
+                    <div class="modal-body">
+                        <table class="table table-hover table-bordered table12" style="margin-top: 15px;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%;" class="text-center">Id</th>
+                                    <th style="width: 15%;" class="text-center">Tên</th>
+                                    <th style="width: 20%;" class="text-center">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                @foreach($students as $sv)
+                                    <tr>
+                                        <td style="width: 15%;" class="text-center idsv"><span class="badge badge-success">{{$sv->id}}</span></td>
+                                        <td style="width: 15%;" class="text-center namesv"><span class="badge badge-success">{{$sv->name}}</span></td>
+                                        <td style="width: 20%;" class="text-center" >
+                                            <button class="btn btn-primary btn-sm select-student">Chọn sinh viên</button>
+                                            <a class="btn btn-info btn-sm" href="admin/student/detail/{{$sv->id}}" target="_blank">Chi tiết</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col col-md-4">
-                        <h3 for="student_id">Phòng:</h3>
-                        <select class="form-control" name="room_id" style="margin-bottom: 10px;">
-                            <option value="">---</option>
-                            @foreach($rooms as $room)
-                            <option value="{{$room->id}}">{{$room->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col col-md-4">
-                        <h3 style="color: #000000;" for="typ">Chọn loại thanh toán:</h3>
-                        <select class="form-control" name="type_payment">
-                            <option value="tiền phòng">Tiền phòng</option>
-                            <option value="tiền điện">Tiền điện</option>
-                            <option value="tiền nước">Tiền nước</option>
-                        </select>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-                <button style="display: block; margin: auto;" type="submit" class="btn btn-primary btn-lg">Tạo hóa đơn</button>
-            </form>
+            </div>      
         </div>
     </div>
+</div>
 </div>
 @endsection

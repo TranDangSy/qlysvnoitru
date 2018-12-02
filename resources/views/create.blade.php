@@ -113,6 +113,7 @@
         <div class="splash-container">
             <div class="panel panel-default panel-border-color panel-border-color-primary">
                 <div class="panel-heading">
+                    <img src="admin_asset/img/logo2.png" alt="" class="img-responsive" style="height: 60px; width: 190px; margin-bottom: 45px; margin-left: 80px;">
                     <span class="splash-description">Chào mừng đến với trang quản trị</span>
                 </div>
                 <div class="panel-body">

@@ -37,7 +37,7 @@ class StudentController extends Controller
     public function detail(Request $request,$id)
     {
         $student = Student::find($id);
-        $rooms = Room::all();
+        $rooms = Room::all()->where('status','1');
 
         return view('admin.student.detail',compact('student','rooms'));
     }
@@ -113,6 +113,13 @@ class StudentController extends Controller
 
     public function postedit(Request $request,$id)
     {
+        $request->validate(
+            [
+                'file' => 'required|min:1', 
+            ],
+            [
+                'file.required' => 'Chưa chọn ảnh',
+            ]);
         $student = Student::find($id);
         $avatar = $this->upload($request->file('file'), 'admin_asset/img/imgsv/');
         $request->merge(['avatar' => $avatar]);

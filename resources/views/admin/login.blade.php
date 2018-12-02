@@ -17,6 +17,7 @@
                 <div class="main-content container-fluid">
                     <div class="splash-container">
                         <div class="panel panel-default panel-border-color panel-border-color-primary">
+                            <img src="admin_asset/img/logo2.png" alt="" class="img-responsive" style="height: 60px; width: 190px; margin: 50px 0px 0px 100px;">
                             <div class="panel-heading"><span class="splash-description">Chào mừng đến trang quản trị</span></div>
                             <div class="panel-body">
                                 @if(count($errors)>0)
@@ -35,7 +36,7 @@
                                 <input id="password" type="password" placeholder="Nhập password" class="form-control" name="password" required>
                             </div>
                             <div class="form-group login-submit">
-                                <button data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">Đăng nhập</button>
+                                <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
                             </div>
                         </form>
                     </div>

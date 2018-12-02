@@ -149,8 +149,8 @@
                         <div class="form-group">
                             <label for="status">Trạng thái:</label>
                             <select name="status" class="form-control">
-                                <option value="1">Đã trọ</option>
-                                <option value="0">Chưa trọ</option>
+                                <option value="1">Đã vào ở</option>
+                                <option value="0">Chưa vào ở</option>
                             </select>
                         </div>
                         <div class="form-group">

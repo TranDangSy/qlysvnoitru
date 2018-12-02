@@ -95,6 +95,13 @@
       today = mm + '/' + dd + '/' + yyyy;
       $('#date').val(today);
     })
-  </script>
-</body>
-</html>
+
+      $(".select-student").click(function() {
+        var a = $(this).parent().siblings('.idsv').children().text();
+        var b = $(this).parent().siblings('.namesv').children().text();
+        $(".selected-student-id").val(a);
+        $(".selected-student-name").val(b);
+      })
+    </script>
+  </body>
+  </html>

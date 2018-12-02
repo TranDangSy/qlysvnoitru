@@ -49,6 +49,11 @@
 										</tr>
 										<tr>
 											<td class="icon"><span class="mdi mdi-pin"></span></td>
+											<td class="item">Ngày bắt đầu ở<span class="icon s7-global"></span></td>
+											<td>{{$student->created_at}}</td>
+										</tr>
+										<tr>
+											<td class="icon"><span class="mdi mdi-pin"></span></td>
 											<td class="item">Thao tác<span class="icon s7-global"></span></td>
 											<td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Chuyển phòng</button></td>
 										</tr>

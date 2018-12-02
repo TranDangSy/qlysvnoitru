@@ -29,20 +29,20 @@
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Giá hóa đơn:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="price" value="{{$payment->price}}">
+								<input readonly="true" type="text" class="form-control" name="price" value="{{$payment->price}}">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="method" class="col-sm-4 control-label">Phương thức thanh toán:</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="method" value="{{$payment->method}}">
+								<input type="text" readonly="true" class="form-control" name="method" value="{{$payment->method}}">
 							</div>
 						</div>
 						@if($payment->student->name != null)
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Sinh viên</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="student_id" value="{{$payment->student->name}}">
+								<input readonly="true" type="text" class="form-control" name="student_id" value="{{$payment->student->name}}">
 							</div>
 						</div>
 						@endif
@@ -50,14 +50,14 @@
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Phòng</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="room_id" value="{{$payment->room->name}}">
+								<input readonly="true" type="text" class="form-control" name="room_id" value="{{$payment->room->name}}">
 							</div>
 						</div>
 						@endif
 						<div class="form-group">
 							<label for="price" class="col-sm-4 control-label">Loại hóa đơn</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" name="type_payment" value="{{$payment->type_payment}}">
+								<input readonly="true" type="text" class="form-control" name="type_payment" value="{{$payment->type_payment}}">
 							</div>
 						</div>
 						<div class="form-group text-center">

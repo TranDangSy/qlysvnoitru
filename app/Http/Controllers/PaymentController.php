@@ -20,8 +20,8 @@ class PaymentController extends Controller
 
     public function create()
     {
-        $rooms = Room::all();
-    	$students = Student::all();
+        $rooms = Room::all()->where('status','1');
+    	$students = Student::all()->where('status','1');
     	return view('admin/payment/create',compact('students','rooms'));
     }
 
