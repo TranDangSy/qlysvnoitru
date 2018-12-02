@@ -135,31 +135,38 @@
                         {{-- <input type="hidden" name="_token" value="{{csrf_token()}}"/> --}}
                         @csrf
                         <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" placeholder="Nhập username của bạn" class="form-control" name="name" required autofocus>
+                            <label for="name">Tên đăng nhập:</label>
+                            <input type="text" placeholder="Nhập tên đăng nhập của bạn" class="form-control" name="name" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" placeholder="Nhập email của bạn" class="form-control" name="email">
                         </div>    
                         <div class="form-group">
-                            <label for="avatar">Avatar</label>
+                            <label for="avatar">Ảnh đại diện</label>
                             <input type="file" class="form-control" name="file">
                         </div>
                         <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" placeholder="Nhập password của bạn" class="form-control" name="password">
+                            <label for="password">Mật khẩu:</label>
+                            <input type="password" placeholder="Nhập mật khẩu của bạn" class="form-control" name="password">
                         </div>
                         <div class="form-group">
-                            <label for="gender">Gender:</label>
-                            <input type="text" placeholder="Nhập giới tính của bạn" class="form-control" name="gender">
+                            <label for="gender">Giới tính:</label>
+                            <select class="form-control" name="gender">
+                                <option value="1">Nam</option>
+                                <option value="0">Nữ</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="status">User status:</label>
-                            <input type="text" placeholder="Nhập status" class="form-control" name="status">
+                            <label for="status">Trạng thái tài khoản:</label>
+                            <select class="form-control" name="status">
+                                <option value="1">Hoạt động</option>
+                                <option value="0">Không hoạt động</option>
+                            </select>
                         </div>
                         <div class="form-group login-submit">
                             <button data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">Register</button>
+                            <a href="admin/user" class="btn btn-success btn-xl">Quay lại</a>
                         </div>
                     </form>
                 </div>

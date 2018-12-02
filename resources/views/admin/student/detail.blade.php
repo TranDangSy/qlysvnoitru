@@ -33,7 +33,7 @@
 											<td class="icon"><span class="mdi mdi-smartphone-android"></span></td>
 											<td class="item">Trạng thái<span class="icon s7-phone"></span></td>
 											@if($student->status == 1)
-											<td><a href="admin/room/detail/{{$student->room->id}}">Đang ở phòng {{$student->room->name}}</a></td>
+											<td><a target="_blank" href="admin/room/detail/{{$student->room->id}}">Đang ở phòng {{$student->room->name}}</a></td>
 											@else
 											<td>Không ở phòng nào</td>
 											@endif
@@ -89,6 +89,7 @@
 										</div>		
 									</div>
 								</form>
+								<a href="admin/student" class="btn btn-success btn-lg">Quay lại</a>
 							</div>
 						</div>
 					</div>

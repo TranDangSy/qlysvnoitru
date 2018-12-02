@@ -160,6 +160,7 @@
                         <div class="form-group">
                             <label for="room_id">Phòng</label>
                             <select name="room_id" class="form-control" >
+                                <option value="">-------</option>
                                 @foreach($rooms as $room)
                                 <option value="{{ $room->id }}">{{$room->name}}</option>
                                 @endforeach

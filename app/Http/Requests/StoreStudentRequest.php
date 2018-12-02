@@ -47,6 +47,7 @@ class StoreStudentRequest extends FormRequest
             'file.required' => 'Chưa chọn ảnh',
             'birth_of_date.required' => 'Chưa nhập ngày tháng năm sinh',
             'id_card.required' => 'Chưa nhập mã sinh viên',
+            'room_id.required' => 'Chưa chọn phòng',
         ];
     }
 }

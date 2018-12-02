@@ -44,12 +44,11 @@ class useradController extends Controller
         $this->validate($request,
             [
                 'name' => 'required',
-                'password' => 'required|min:3|max:32'
+                'password' => 'required|max:32'
             ],
             [
                 'name.required' => 'Bạn chưa nhập user name',
                 'password.required' => 'Bạn chưa nhập password',
-                'password.min' => 'Password không được ít hơn 3 kí tự',
                 'password.max' => 'Password không được nhiều hơn 32 kí tự'
             ]);
 
