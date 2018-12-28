@@ -26,9 +26,11 @@ class StoreRoomRequest extends FormRequest
         return [
             'name' => 'required',
             'file' => 'required',
-            'number_bed' => 'required',
-            'price' => 'required',
+            'number_bed' => 'required|integer',
+            'price' => 'required|integer',
             'status' => 'required',
+            'water_price' => 'required|integer',
+            'electric_price' => 'required|integer',
         ];
     }
 
@@ -39,7 +41,13 @@ class StoreRoomRequest extends FormRequest
             'file.required' => 'Chưa chọn ảnh',
             'number_bed.required' => 'Chưa nhập số giường trong phòng',
             'price.required' => 'Chưa nhập giá phòng',
+            'price.integer' => 'Giá phải là số',
+            'number_bed.integer' => 'Số giường phải là số',
             'status.required' => 'Chưa nhập trạng thái phòng',
+            'water_price.required' => 'Chưa nhập số nước',
+            'water_price.integer' => 'Số nước phải là số',
+            'electric_price.required' => 'Chưa nhập số điện',
+            'electric_price.integer' => 'Số điện phải là số',
         ];
     }
 }
